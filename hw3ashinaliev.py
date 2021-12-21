@@ -1,39 +1,39 @@
-class Person:
-    def _init_(self,name,work,address,age,hobby):
-        if isinstance(name,str):
+class Person():
+    def __init__(self, name, work, address, age, hobby):
+        if isinstance(name, str):
             self.name = name
         else:
             raise ValueError("name should be str")
-        if isinstance(work,str):
+        if isinstance(work, str):
             self.work = work
         else:
             raise ValueError("work should be str")
-        if isinstance(address,str):
+        if isinstance(address, str):
             self.address = address
         else:
             raise ValueError("address should be str")
-        if isinstance(age,int):
+        if isinstance(age, int):
             self.age = age
         else:
             raise ValueError("age should be str")
-        if isinstance(hobby,str):
+        if isinstance(hobby, str):
             self.hobby = hobby
         else:
             raise ValueError("hobby should be str")
     def hi(self):
         return f'Hi my name is {self.name}'
-    def work(self):
+    def working(self):
         return f'My work is {self.work}'
-    def _str_(self):
+    def __str__(self):
         return f'Name:{self.name}\n'\
         f'Work:{self.work}\n'\
         f'Address:{self.address}\n'\
         f'Age:{self.age}\n'\
         f'Hobby:{self.hobby}'
-Dentist=Person(name="Kesha",work="Dentist",address="Shopokova 145", age=23,hobby="Regbi")
+Dentist = Person(name="Kesha",work="Dentist",address="Shopokova 145", age=23,hobby="Regbi")
 print(Dentist)
 print(Dentist.hi())
-print(Dentist.work())
+print(Dentist.working())
 class Driver(Person):
     def _init_(self,name,work,address,age,hobby):
         super()._init_(name,work,address,age,hobby)
@@ -74,7 +74,7 @@ print(Proger1)
 print(Proger1.salary(4000))
 print(Proger1.experience(5))
 class Laptop:
-    def _init_(self,name,cost,color,memory,ram,camera):
+    def __init__(self,name,cost,color,memory,ram,camera):
         if isinstance(name,str):
             self.name = name
         else:
@@ -103,14 +103,14 @@ class Laptop:
         return f'Manufacturer {self.name} {x} '
     def _camera(self):
         return f'The {self.name} has a camera'
-    def _str_(self):
+    def __str__(self):
         return f'Name:{self.name}\n'\
         f'Cost:{self.cost}$\n'\
         f'Color:{self.color}\n'\
         f'Memory:{self.memory}\n'\
         f'Ram:{self.ram}\n'\
         f'Camera:{self.camera}\n'
-Laptop1=Laptop(name="Acer",cost=700,color="Black",memory=400,ram=16,camera=True)
+Laptop1 = Laptop(name="Acer",cost=700,color="Black",memory=400,ram=16,camera=True)
 print(Laptop1)
 class Macbook(Laptop):
     def _init_(self,name,cost,color,memory,ram,camera):
@@ -146,12 +146,12 @@ class Hp(Laptop):
 Hp1=Hp(name="Hp",cost=700,color="White",memory=800,ram=36,camera=True)
 print(Hp1)
 class Kino:
-    def _init_(self,bill):
+    def __init__(self,bill):
         if isinstance(bill,int):
             self.bill = bill
         else:
             raise ValueError("Bill should be int")
-    def _str_(self):
+    def __str__(self):
         return f'На сегодня есть фильмы\n1:Золушка-250сом\n2:Django-300сом\n3:Lion-300сом\nВыберите номер билета'
     def _eq_(self,x):
         if 1==x :
@@ -162,11 +162,11 @@ class Kino:
             return f'Подойдите к кассе для оплаты\nНа счету осталось {self.bill-300}сом '
         else:
             return f'Выберите правильный номер билета!'
-Kino1=Kino(500)
+Kino1 = Kino(500)
 print(Kino1)
 print(Kino1._eq_(2))
 class Starbucks:
-    def _init_(self, money):
+    def __init__(self, money):
         self.money = money
     def _it_(self, other):
         if isinstance(other, str):
