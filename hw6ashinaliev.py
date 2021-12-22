@@ -1,7 +1,7 @@
-a = [2, 7, 11, 15]
+numbers = [2, 7, 11, 15]
 
 
-def twosum(alist, targetnum):
+def summary(alist, targetnum):
     for i, j in enumerate(alist):
         k = i + 1
         if alist[k:].count(targetnum - j) > 0:
@@ -11,4 +11,4 @@ def twosum(alist, targetnum):
                 k = b + 1
 
 
-twosum(a, 9)
+summary(numbers, 9)
